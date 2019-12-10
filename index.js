@@ -26,16 +26,6 @@ app.get('/', (req, res, next) => {
     res.render('articles.ejs', { article: articles })
 })
 app.post('/articles', (req, res, next) => {
-    // const url = req.body.url
-    // read(url, (err, result) => {
-    //     if (err || !result) res.status(500).send('error')
-    //     Article.create(
-    //         { title: result.title, content: result.content },
-    //         (err, article) => {
-    //             if (err) return next(err)
-    //             res.send('OK')
-    //         })
-    // })
     const id = req.body.id
     Article.create(
         { id: id, title: `title${id}`, content: 'result.content' },
